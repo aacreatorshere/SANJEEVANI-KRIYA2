@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #F8F5ED;
+    color: #0F1A2A;
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: #D49A35;
+    color: #0F1A2A;
+  }
+}
+
+/* Custom editorial typography & gold line decorations */
+.font-serif-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.gold-line {
+  position: relative;
+}
+
+.gold-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(196, 161, 90, 0.6) 0%, rgba(196, 161, 90, 0.15) 100%);
+}
+
+.gold-border {
+  border-color: rgba(196, 161, 90, 0.35);
+}
+
+.gold-border-subtle {
+  border-color: rgba(196, 161, 90, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F1A2A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4A15A;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D49A35;
+}
+
+/* Subtle image overlay vignette */
+.editorial-overlay {
+  background: linear-gradient(180deg, rgba(15, 26, 42, 0.15) 0%, rgba(15, 26, 42, 0.75) 100%);
+}
+
+.editorial-overlay-full {
+  background: radial-gradient(circle at center, rgba(15, 26, 42, 0.3) 0%, rgba(15, 26, 42, 0.85) 100%);
+}
+
+/* Hide scrollbar for clean horizontal carousel drag */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
